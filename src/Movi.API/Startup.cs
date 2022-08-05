@@ -13,6 +13,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Movi.API.Data;
+using Microsoft.IdentityModel.Tokens;
 
 namespace Movi.API
 {
@@ -30,13 +31,24 @@ namespace Movi.API
         {
 
             services.AddControllers();
-            services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Movi.API", Version = "v1" });
-            });
+            services.AddSwaggerGen(c => { c.SwaggerDoc("v1", new OpenApiInfo { Title = "Movi.API", Version = "v1" }); });
 
             services.AddDbContext<MoviAPIContext>(options =>
                     options.UseInMemoryDatabase("Movies"));
+
+            services.AddAuthentication("Bearer")
+                 .AddJwtBearer("Bearer", options =>
+                 {
+                     options.Authority = "https://localhost:5005";
+                     options.TokenValidationParameters = new TokenValidationParameters
+                     {
+                         ValidateAudience = false
+                     };
+                 });
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("ClientIdPolicy", policy => policy.RequireClaim("client_id", "movieClient"));
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -52,7 +64,7 @@ namespace Movi.API
             app.UseHttpsRedirection();
 
             app.UseRouting();
-
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

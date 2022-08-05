@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32519.379
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Movi.API", "Movi.API\Movi.API.csproj", "{BED229A4-33B3-46AB-A100-8EFF578CAE3C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Movi.API", "Movi.API\Movi.API.csproj", "{BED229A4-33B3-46AB-A100-8EFF578CAE3C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServer", "IdentityServer\IdentityServer.csproj", "{06502885-06FB-465E-9568-AD73FF480801}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{BED229A4-33B3-46AB-A100-8EFF578CAE3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BED229A4-33B3-46AB-A100-8EFF578CAE3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BED229A4-33B3-46AB-A100-8EFF578CAE3C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06502885-06FB-465E-9568-AD73FF480801}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06502885-06FB-465E-9568-AD73FF480801}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06502885-06FB-465E-9568-AD73FF480801}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06502885-06FB-465E-9568-AD73FF480801}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
