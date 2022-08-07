@@ -38,8 +38,7 @@ namespace Movi.Client.HttpHandlers
             //}
             //request.SetBearerToken(tokenResponse.AccessToken);
 
-            var accessToken = await _httpContextAccessor
-                .HttpContext.GetTokenAsync(OpenIdConnectParameterNames.AccessToken);
+            var accessToken = await _httpContextAccessor.HttpContext.GetTokenAsync(OpenIdConnectParameterNames.AccessToken);
 
             if (!string.IsNullOrWhiteSpace(accessToken))
             {
