@@ -28,10 +28,10 @@ namespace Movi.Client.Controllers
         // GET: Movies
         public async Task<IActionResult> Index()
         {
-            await LogTokenAndClaims();
+            await LoggingTokenAndClaims();
             return View(await _movieApiService.GetMovies());
         }
-        public async Task LogTokenAndClaims()
+        public async Task LoggingTokenAndClaims()
         {
             var identityToken = await HttpContext.GetTokenAsync(OpenIdConnectParameterNames.IdToken);
 
