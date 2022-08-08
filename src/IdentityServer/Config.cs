@@ -50,7 +50,7 @@ namespace IdentityServer
                         IdentityServerConstants.StandardScopes.Address,
                         IdentityServerConstants.StandardScopes.Email,
                         "movieAPI",
-                        "roles"
+                        "roles" // we can carry the scope named "roles" information from IDS to our client application
                     }
                 } 
             };
@@ -67,17 +67,14 @@ namespace IdentityServer
                new ApiResource("movieAPI", "Movie API")
           };
 
-        public static IEnumerable<IdentityResource> IdentityResources =>
+        public static IEnumerable<IdentityResource> IdentityResources => // a named group of claims that can be requested using the scope parameter.
           new IdentityResource[]
           {
               new IdentityResources.OpenId(),
               new IdentityResources.Profile(),
               new IdentityResources.Address(),
               new IdentityResources.Email(),
-              new IdentityResource(
-                    "roles",
-                    "Your role(s)",
-                    new List<string>() { "role" })
+              new IdentityResource( "roles", "Your role(s)", new List<string>() { "role" })
           };
 
         public static List<TestUser> TestUsers =>
@@ -91,7 +88,20 @@ namespace IdentityServer
                     Claims = new List<Claim>
                     {
                         new Claim(JwtClaimTypes.GivenName, "emre"),
-                        new Claim(JwtClaimTypes.FamilyName, "keles")
+                        new Claim(JwtClaimTypes.FamilyName, "keles"),
+                        new Claim(JwtClaimTypes.Role, "admin") // added
+                    }
+                },
+                 new TestUser
+                {
+                    SubjectId = "6BE86359-073C-434B-AD2D-A3932222DABE",
+                    Username = "adm",
+                    Password = "pass",
+                    Claims = new List<Claim>
+                    {
+                        new Claim(JwtClaimTypes.GivenName, "adm"),
+                        new Claim(JwtClaimTypes.FamilyName, "keles"),
+                        new Claim(JwtClaimTypes.Role, "user") //added
                     }
                 }
             };

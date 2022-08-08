@@ -85,20 +85,20 @@ namespace Movi.Client
 
                 options.Scope.Add("address");
                 options.Scope.Add("email");
+                options.Scope.Add("movieAPI");
                 options.Scope.Add("roles");
+                options.ClaimActions.MapUniqueJsonKey("role", "role");
 
                 options.ClaimActions.DeleteClaim("sid");
                 options.ClaimActions.DeleteClaim("idp");
                 options.ClaimActions.DeleteClaim("s_hash");
                 options.ClaimActions.DeleteClaim("auth_time");
-                options.ClaimActions.MapUniqueJsonKey("role", "role");
 
-                options.Scope.Add("movieAPI");
 
                 options.SaveTokens = true;
                 options.GetClaimsFromUserInfoEndpoint = true;
 
-                options.TokenValidationParameters = new TokenValidationParameters
+                options.TokenValidationParameters = new TokenValidationParameters // once the token get obtained, validation checks whether the token has these claimstypes or not.
                 {
                     NameClaimType = JwtClaimTypes.GivenName,
                     RoleClaimType = JwtClaimTypes.Role
