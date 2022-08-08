@@ -43,7 +43,7 @@ namespace Movi.Client.Controllers
             }
         }
 
-        [Authorize(Roles = "admin")]
+        [Authorize(Roles = "admin")] // claim based 
         public async Task<IActionResult> OnlyAdmin()
         {
             var userInfo = await _movieApiService.GetUserInfo();

@@ -27,11 +27,11 @@ namespace Movi.Client.ApiServices
         public async Task<IEnumerable<Movie>> GetMovies()
         {
             ////////////////////////
-            // WAY 1 :  -----> in the way 2 we ourself take care about all token operations whereas, in the way 1; delegation handler takes care of getting token
+            // WAY 1 :  -----> in the way 2 we ourself take care about all token operations whereas, in the way 1; the delegationHandler class takes care of getting token
             // so that is why we did not code token operations...
             var httpClient = _httpClientFactory.CreateClient("MovieAPIClient");
 
-            var request = new HttpRequestMessage( HttpMethod.Get, "/movies");
+            var request = new HttpRequestMessage( HttpMethod.Get, "/movies"); 
 
             var response = await httpClient.SendAsync(
                 request, HttpCompletionOption.ResponseHeadersRead).ConfigureAwait(false);

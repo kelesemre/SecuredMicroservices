@@ -5,9 +5,11 @@ VisualStudioVersion = 17.2.32519.379
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Movi.API", "Movi.API\Movi.API.csproj", "{BED229A4-33B3-46AB-A100-8EFF578CAE3C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServer", "IdentityServer\IdentityServer.csproj", "{06502885-06FB-465E-9568-AD73FF480801}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityServer", "IdentityServer\IdentityServer.csproj", "{06502885-06FB-465E-9568-AD73FF480801}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Movi.Client", "Movi.Client\Movi.Client.csproj", "{0F833EC5-D419-4D38-9F8A-C5C67160C7E0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Movi.Client", "Movi.Client\Movi.Client.csproj", "{0F833EC5-D419-4D38-9F8A-C5C67160C7E0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiGateway", "ApiGateway\ApiGateway.csproj", "{C5BEEE96-CFA7-41DE-A280-225E35BCB287}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{0F833EC5-D419-4D38-9F8A-C5C67160C7E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0F833EC5-D419-4D38-9F8A-C5C67160C7E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0F833EC5-D419-4D38-9F8A-C5C67160C7E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5BEEE96-CFA7-41DE-A280-225E35BCB287}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5BEEE96-CFA7-41DE-A280-225E35BCB287}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5BEEE96-CFA7-41DE-A280-225E35BCB287}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5BEEE96-CFA7-41DE-A280-225E35BCB287}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

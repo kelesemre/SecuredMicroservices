@@ -1,11 +1,11 @@
-﻿using IdentityModel.Client;
-using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Http;
-using Microsoft.IdentityModel.Protocols.OpenIdConnect;
-using System;
+﻿using System;
 using System.Net.Http;
 using System.Threading;
+using IdentityModel.Client;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.IdentityModel.Protocols.OpenIdConnect;
 
 namespace Movi.Client.HttpHandlers
 {
@@ -26,6 +26,7 @@ namespace Movi.Client.HttpHandlers
         //    _httpClientFactory = httpClientFactory ?? throw new ArgumentNullException(nameof(httpClientFactory));
         //    _tokenRequest = tokenRequest ?? throw new ArgumentNullException(nameof(tokenRequest));
         //}
+        // because we use hybrid grand type flow we do not need to get token from IdentityServer by manually. Hybrid flow takes care of the rest.
 
         protected override async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
         {
@@ -37,7 +38,7 @@ namespace Movi.Client.HttpHandlers
             //    throw new HttpRequestException("Something went wrong while requesting the access token");
             //}
             //request.SetBearerToken(tokenResponse.AccessToken);
-
+            // because we use hybrid grand type flow we do not need to get token from IdentityServer by manually. Hybrid flow takes care of the rest.
             var accessToken = await _httpContextAccessor.HttpContext.GetTokenAsync(OpenIdConnectParameterNames.AccessToken);
 
             if (!string.IsNullOrWhiteSpace(accessToken))
